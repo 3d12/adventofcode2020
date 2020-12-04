@@ -154,15 +154,13 @@ function validatePassport(passport) {
 	// pid nine-digit number, incl leading zeroes
 	let pidnum = 0;
 	try {
-		const regex = /(\d{9})/;
+		const regex = /^(\d{9})$/;
 		const found = passport.pid.match(regex);
 		pidnum = found[1];
 	} catch(e) {
 		return false;
 	}
 	// cid, ignored
-	console.log(passport);
-	console.log("^^ Valid Passport ^^");
 	return true;
 }
 
