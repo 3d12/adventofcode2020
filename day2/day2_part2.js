@@ -37,9 +37,6 @@ function passwordValidator(pwInfo) {
 	await openFileForReading('input.txt');
 	let validPasswords = 0;
 	for (const line of pwArray) {
-		let parsed = parseLine(line);
-		console.log(parsed);
-		console.log(passwordValidator(parsed));
 		if (passwordValidator(parseLine(line))) validPasswords++;
 	}
 	console.log("Valid passwords: " + validPasswords);
